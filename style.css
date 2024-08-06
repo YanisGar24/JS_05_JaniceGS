@@ -1,0 +1,15 @@
+body {
+   padding: 10px;
+   margin: 20px;
+   align-items: center;
+}
+
+.card-title{
+    color: red;
+}
+
+.card{
+    background-color: bisque;
+    padding: 10px;
+    text-align: center;
+}
