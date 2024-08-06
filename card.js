@@ -38,13 +38,25 @@ function createCard(user) {
     img.alt = user.user_name; //toma el nombre del usuario
 
     const title = document.createElement('h2');
-    title.textContent = user.user_name; //imprime los nombres de los usuario
+    title.textContent = user.id; //imprime los nombres de los usuario
+    title.append(" - Nombre");
+
+    const id = document.createElement('h4');
+    id.textContent = user.id; //imprime los nombres de los usuario
+    id.append(" - ID");
+
+    const edad = document.createElement('h4');
+    edad.textContent = user.age; //imprime la edad
+    edad.append(" - Edad");
+    
 
     const description = document.createElement('p');
     description.textContent = user.description; //imprime la descripcion
 
     card.appendChild(img);
     card.appendChild(title);
+    card.appendChild(id);
+    card.appendChild(edad);
     card.appendChild(description);
 
     return card;
@@ -52,7 +64,7 @@ function createCard(user) {
 
 // Obtener el contenedor y agregar tarjetas
 const container = document.getElementById('card-container');
-users.forEach(user => {
-    const card = createCard(user);
+users.forEach(user => { // por cada usuario dentro del objeto
+    const card = createCard(user); //se crea la card
     container.appendChild(card);
 });
